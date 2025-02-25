@@ -2,7 +2,7 @@ import customer.CustomerType;
 
 import java.util.List;
 
-public class CalculateBill {
+public final class CalculateBill {
 
     private CalculateBill() {
     }

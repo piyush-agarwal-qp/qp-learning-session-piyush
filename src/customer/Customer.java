@@ -1,8 +1,8 @@
 package customer;
 
 public final class Customer {
-    private String name;
-    private CustomerType type;
+    private final String name;
+    private final CustomerType type;
 
     public Customer(String name, CustomerType type) {
         this.name = name;
@@ -13,15 +13,14 @@ public final class Customer {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public CustomerType getType() {
         return type;
     }
 
-    public void setType(CustomerType type) {
-        this.type = type;
+    @Override
+    public String toString() {
+        return "name: " + getName()
+                + " : "
+                + "type: " + getType().getValue();
     }
 }
