@@ -16,10 +16,11 @@ public class OrderManagementSystem {
 
     public static void generateInvoice(Order order) {
         System.out.println("Generating Invoice...");
-        System.out.println("Customer: " + order.getCustomer().getName());
-        System.out.println("Total: $" + order.totalPrice);
-        System.out.println("Discounted Total: $" + order.discountedPrice);
-        System.out.println("Items: " + order.getItems());
+        order.printOrder();
+        double totalOrderPrice = CalculateBill.calculateTotal(order.getPrices());
+        System.out.println("Total Price: " + totalOrderPrice);
+        double discountPrice = CalculateBill.applyDiscount(totalOrderPrice, order.getCustomer().getType());
+        System.out.println("Discounted Price: " + discountPrice);
         System.out.println("Thank you for shopping with us!");
     }
 }

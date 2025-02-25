@@ -25,8 +25,11 @@ public class CalculateBill {
         for (double price : prices) {
             totalPrice += price;
         }
-        applyDiscount();
         return totalPrice;
+    }
+
+    public static double applyDiscount(double totalPrice, CustomerType customerType) {
+        return totalPrice - (totalPrice * CalculateBill.getDiscountForCustomer(customerType));
     }
 
 
